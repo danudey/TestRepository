@@ -1,0 +1,30 @@
+default_language_version:
+    python: python3.7
+default_stages: [commit, push]
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: master  # Use the ref you want to point at
+  hooks:
+  - id: trailing-whitespace
+  - id: check-builtin-literals
+  - id: check-byte-order-marker
+  - id: check-ast
+  - id: check-case-conflict
+  - id: check-docstring-first
+  - id: check-json
+  - id: check-merge-conflict
+  - id: check-symlinks
+  - id: check-yaml
+    args:
+    - "--unsafe"
+  - id: double-quote-string-fixer
+  - id: end-of-file-fixer
+  - id: flake8
+  - id: pretty-format-json
+  - id: requirements-txt-fixer
+  - id: trailing-whitespace
+
+- repo: https://github.com/pre-commit/mirrors-autopep8
+  rev: master
+  hooks:
+  - id: autopep8

@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 60
+      runas: root
+    - location: systemctl start flask.service
+      timeout: 10
+      runas: root
+  ApplicationStop:
+    - location: systemctl stop flask.service
+      timeout: 10
+      runas: root

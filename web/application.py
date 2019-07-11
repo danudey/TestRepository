@@ -3,14 +3,13 @@ from jinja2 import Template
 from socket import gethostname
 
 # some bits of text for the page.
-template_data = open('index.html', 'rt').read()
+template_data = open('web/index.html', 'rt').read()
 
 template = Template(template_data)
 output = template.render(hostname=gethostname())
 
 # EB looks for an 'application' callable by default.
-application = Flask(__name__)
-
+application = Flask("Application")
 
 @application.route('/')
 def index():

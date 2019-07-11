@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Installing system packages..."
+yum install -y -q python3-pip python3-devel python3-wheel
+
+echo "Installing pip dependencies..."
+pip install -r requirements.txt
+
+echo "Installing service..."
+systemctl enable /var/www/config/flask.service

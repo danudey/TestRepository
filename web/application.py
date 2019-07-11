@@ -9,7 +9,8 @@ template = Template(template_data)
 output = template.render(hostname=gethostname())
 
 # EB looks for an 'application' callable by default.
-application = Flask("Application")
+application = Flask('Application')
+
 
 @application.route('/')
 def index():

@@ -5,7 +5,13 @@ echo "Enabling services..."
 echo "  Enabling nginx service..."
 /usr/bin/systemctl enable nginx.service
 
-echo "  Enabling Flask service..."
-/usr/bin/systemctl enable /var/www/config/flask.service
+echo "  Enabling Hello World service..."
+/usr/bin/systemctl enable /var/www/config/helloworld.service
+
+echo "  Disabling older services..."
+(
+    /usr/bin/systemctl stop flask.service
+    /usr/bin/systemctl disable flask.service
+) 2>/dev/null
 
 echo "Services enabled!"

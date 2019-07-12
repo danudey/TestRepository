@@ -9,6 +9,9 @@ hooks:
       timeout: 60
       runas: root
   AfterInstall:
+    - location: scripts/install_requirements
+      timeout: 10
+      runas: root
     - location: scripts/enable_service
       timeout: 10
       runas: root

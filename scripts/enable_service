@@ -1,3 +1,4 @@
 #!/bin/sh
 
+echo "Enabling Flask service..."
 /usr/bin/systemctl enable /var/www/config/flask.service

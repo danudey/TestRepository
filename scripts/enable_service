@@ -8,8 +8,4 @@ echo "  Enabling nginx service..."
 echo "  Enabling Hello World service..."
 /usr/bin/systemctl enable /var/www/config/helloworld.service
 
-echo "  Disabling older services..."
-/usr/bin/systemctl stop flask.service 2>/dev/null
-/usr/bin/systemctl disable flask.service 2>/dev/null
-
 echo "Services enabled!"

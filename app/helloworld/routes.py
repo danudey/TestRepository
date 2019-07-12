@@ -1,8 +1,7 @@
 # aiohttpdemo_polls/routes.py
-from .views import index, health
+from .views import index, health, breakit
 
 def setup_routes(app):
     app.router.add_get('/', index)
-
-def health_check(app):
     app.router.add_get('/health_check', health)
+    app.router.add_get('/breakit', breakit)

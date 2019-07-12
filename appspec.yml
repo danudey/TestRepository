@@ -11,7 +11,15 @@ hooks:
     - location: systemctl start flask.service
       timeout: 10
       runas: root
+  AfterInstall:
+    - location: /usr/bin/systemctl enable /var/www/config/flask.service
+      timeout: 10
+      runas: root
+  ApplicationStart:
+    - location: /usr/bin/systemctl start flask.service
+      timeout: 10
+      runas: root
   ApplicationStop:
-    - location: systemctl stop flask.service
+    - location: /usr/bin/systemctl stop flask.service
       timeout: 10
       runas: root

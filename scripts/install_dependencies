@@ -8,4 +8,7 @@ echo "  Installing Python..."
 echo "  Installing nginx..."
 /usr/bin/amazon-linux-extras install -y -q nginx1.12
 
+echo "  Removing nginx config file (if it exists)..."
+/bin/rm /etc/nginx/nginx.conf
+
 echo "Done installing system packages!"

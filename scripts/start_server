@@ -1,3 +1,4 @@
 #!/bin/sh
 
  /usr/bin/systemctl start flask.service
+ /usr/bin/systemctl start nginx.service

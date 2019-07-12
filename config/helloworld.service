@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the helloworld service
+After=network.target
+
+[Service]
+User=nobody
+WorkingDirectory=/var/www/
+ExecStart=/bin/python3 -m app.helloworld
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

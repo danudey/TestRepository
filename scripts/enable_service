@@ -1,4 +1,11 @@
 #!/bin/sh
 
-echo "Enabling Flask service..."
+echo "Enabling services..."
+
+echo "  Enabling nginx service..."
+/usr/bin/systemctl enable nginx.service
+
+echo "  Enabling Flask service..."
 /usr/bin/systemctl enable /var/www/config/flask.service
+
+echo "Services enabled!"

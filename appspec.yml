@@ -3,6 +3,8 @@ os: linux
 files:
   - source: /
     destination: /var/www/
+  - source: /config/nginx.conf
+    destination: /etc/nginx/nginx.conf
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies

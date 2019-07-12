@@ -1,5 +1,4 @@
-from .helloworld import app, setup_routes, web
+from .helloworld import app, web
 
 if __name__ == "__main__":
-    setup_routes(app)
     web.run_app(app)

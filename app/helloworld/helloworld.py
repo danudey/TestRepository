@@ -5,6 +5,7 @@ import jinja2
 from socket import gethostname
 
 from .routes import setup_routes
+from .middleware import setup_middlewares
 from .config import BASE_DIR
 
 
@@ -19,7 +20,9 @@ aiohttp_jinja2.setup(
     app,
     loader=jinja2.FileSystemLoader(str(BASE_DIR / "templates"))
 )
+setup_middlewares(app)
+setup_routes(app)
 
 if __name__ == "__main__":
-    setup_routes(app)
+    
     web.run_app(app)

@@ -7,6 +7,8 @@ User=nobody
 WorkingDirectory=/var/www/
 ExecStart=/bin/python3 -m app.helloworld
 Restart=always
+StateDirectory=helloworld
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
